@@ -9,7 +9,7 @@
     <color name="green_soft_dim">#86AC8B</color>
     <color name="green_dark">#345C3C</color>
     <color name="orange_light">#FFF355</color>
-    <color name="red_soft">#FF7272</color>
+    <color name="red_soft">#B3FF7272</color>
     <color name="red_light">#FC3838</color>
     <color name="text">#70593A</color>
 </resources>
