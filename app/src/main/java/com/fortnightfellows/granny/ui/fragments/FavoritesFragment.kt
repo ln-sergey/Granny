@@ -1,21 +1,17 @@
 package com.fortnightfellows.granny.ui.fragments
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-
 import com.fortnightfellows.granny.R
 import com.fortnightfellows.granny.adapters.RecyclerAdapter
 import com.fortnightfellows.granny.api_wrapper.models.FeedItem
 import com.fortnightfellows.granny.databinding.FavoritesFragmentBinding
-import com.fortnightfellows.granny.databinding.FeedFragmentBinding
 import com.fortnightfellows.granny.view_models.FavoritesFragmentViewModel
-import com.fortnightfellows.granny.view_models.FeedFragmentViewModel
 
 class FavoritesFragment : Fragment() {
 
@@ -32,12 +28,8 @@ class FavoritesFragment : Fragment() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this.context!!)
         binding.recyclerView.setHasFixedSize(true)
         binding.recyclerView.adapter =
-            RecyclerAdapter(this.context!!, listOf(FeedItem(), FeedItem(), FeedItem(), FeedItem(), FeedItem()))
+            RecyclerAdapter(activity!!.findViewById<View>(R.id.mainLayout), this.context!!, listOf(FeedItem(), FeedItem(), FeedItem(), FeedItem(), FeedItem()))
         return binding.root
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
     }
 
 }

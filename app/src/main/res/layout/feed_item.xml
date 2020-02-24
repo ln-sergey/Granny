@@ -17,7 +17,7 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="4dp"
-        android:background="@drawable/feed_item_back"
+        android:background="@drawable/back_light"
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
@@ -31,13 +31,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/imageView5"
+
+            <com.fortnightfellows.granny.views.HintedImageButton
+                android:id="@+id/image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="13dp"
+                android:layout_marginTop="-12dp"
+                android:layout_marginStart="-12dp"
+                android:layout_marginEnd="-12dp"
+                android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/cat" />
+                android:src="@drawable/cat"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:layout_gravity="bottom"
+                android:background="@color/light"/>
 
         </androidx.cardview.widget.CardView>
 
@@ -62,7 +72,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_heart" />
+                app:srcCompat="@drawable/ic_heart"/>
 
             <TextView
                 android:id="@+id/textView2"

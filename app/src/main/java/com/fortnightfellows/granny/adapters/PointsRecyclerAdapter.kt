@@ -2,28 +2,24 @@ package com.fortnightfellows.granny.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.MotionEvent
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.annotation.NonNull
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.fortnightfellows.granny.R
-import com.fortnightfellows.granny.api_wrapper.models.FeedItem
-import com.fortnightfellows.granny.databinding.FeedItemBinding
+import com.fortnightfellows.granny.api_wrapper.models.Point
+import com.fortnightfellows.granny.databinding.PointsItemBinding
 
-class FeedRecyclerAdapter(
-    val screen: View,
+class PointsRecyclerAdapter(
     private var context: Context,
-    private var listItems: List<FeedItem>
-): RecyclerView.Adapter<FeedRecyclerAdapter.RecyclerHolder>() {
+    private var listItems: List<Point>
+): RecyclerView.Adapter<PointsRecyclerAdapter.RecyclerHolder>() {
 
     @NonNull
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerHolder =
         RecyclerHolder(DataBindingUtil.inflate(
             LayoutInflater.from(parent.context),
-            R.layout.feed_item,
+            R.layout.points_item,
             parent,
             false
         ))
@@ -31,8 +27,8 @@ class FeedRecyclerAdapter(
     override fun getItemCount(): Int = listItems.size
 
     override fun onBindViewHolder(holder: RecyclerHolder, position: Int) {
-        holder.binding.image.screen = screen
+        holder.binding.point = listItems[position]
     }
 
-    class RecyclerHolder(val binding: FeedItemBinding): RecyclerView.ViewHolder(binding.root)
+    class RecyclerHolder(val binding: PointsItemBinding): RecyclerView.ViewHolder(binding.root)
 }

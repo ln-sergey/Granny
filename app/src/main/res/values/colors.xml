@@ -5,6 +5,7 @@
     <color name="colorPrimaryDark">#FFDF95</color>
     <color name="colorAccent">#FFDF95</color>
     <color name="green_light">#A3FF55</color>
+    <color name="green_light_soft">#C2FF7E</color>
     <color name="green_soft">#B9F0C4</color>
     <color name="green_soft_dim">#86AC8B</color>
     <color name="green_dark">#345C3C</color>

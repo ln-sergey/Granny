@@ -1,18 +1,15 @@
 package com.fortnightfellows.granny.ui.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.KeyEvent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.fortnightfellows.granny.R
-import com.fortnightfellows.granny.adapters.RecyclerAdapter
-import com.fortnightfellows.granny.api_wrapper.models.FeedItem
 import com.fortnightfellows.granny.databinding.ActivityMainBinding
 import com.fortnightfellows.granny.ui.fragments.FavoritesFragment
 import com.fortnightfellows.granny.ui.fragments.FeedFragment
 import com.fortnightfellows.granny.ui.fragments.SearchFragment
-import com.fortnightfellows.granny.view_models.EnterActivityViewModel
 import com.fortnightfellows.granny.view_models.MainActivityViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -47,10 +44,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun openFragment(fragment: Fragment) {
+    fun openFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
+        transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
         transaction.replace(R.id.container, fragment)
-        transaction.addToBackStack(null)
+        if (fragment::class != FeedFragment::class &&
+                fragment::class != SearchFragment::class &&
+                fragment::class != FavoritesFragment::class)
+            transaction.addToBackStack(null)
         transaction.commit()
     }
 }
