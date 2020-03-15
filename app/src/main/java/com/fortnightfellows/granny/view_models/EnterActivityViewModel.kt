@@ -9,6 +9,7 @@ import java.lang.ref.WeakReference
 class EnterActivityViewModel(
     private val context: WeakReference<EnterActivity>
 ): ViewModel() {
+
     fun enter() {
         context.get()?.startActivity(Intent(context.get(), MainActivity::class.java))
     }

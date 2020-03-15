@@ -1,10 +1,8 @@
 package com.fortnightfellows.granny.adapters
 
 import android.content.Context
-import android.view.LayoutInflater
-import android.view.MotionEvent
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.annotation.NonNull
 import androidx.databinding.DataBindingUtil
@@ -32,6 +30,7 @@ class FeedRecyclerAdapter(
 
     override fun onBindViewHolder(holder: RecyclerHolder, position: Int) {
         holder.binding.image.screen = screen
+        holder.binding.model = listItems[position]
     }
 
     class RecyclerHolder(val binding: FeedItemBinding): RecyclerView.ViewHolder(binding.root)

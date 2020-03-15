@@ -19,6 +19,7 @@ import com.fortnightfellows.granny.animations.RecyclerAnimations.expand
 import com.fortnightfellows.granny.api_wrapper.models.Ingredient
 import com.fortnightfellows.granny.api_wrapper.models.Point
 import com.fortnightfellows.granny.databinding.RecipeFragmentBinding
+import com.fortnightfellows.granny.utils.Display.pxFromDp
 import com.fortnightfellows.granny.view_models.RecipeFragmentViewModel
 
 class RecipeFragment : Fragment() {
@@ -36,6 +37,7 @@ class RecipeFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.recipe_fragment, container, false)
         viewModel = RecipeFragmentViewModel()
+        binding.model = viewModel
         amountSpinnerAdapter = ArrayAdapter(context!!, R.layout.spinner_item,
             listOf(1, 2, 3, 4, 5))
         ingredientsRecyclerAdapter = IngredientsRecyclerAdapter(
@@ -56,8 +58,6 @@ class RecipeFragment : Fragment() {
             )
         )
         binding.spinner.adapter = amountSpinnerAdapter
-        binding.recyclerIngredients.layoutManager = LinearLayoutManager(context)
-        binding.recyclerPoints.layoutManager = LinearLayoutManager(context)
         binding.recyclerIngredients.adapter = ingredientsRecyclerAdapter
         binding.recyclerPoints.adapter = pointsRecyclerAdapter
         binding.paneExpand.setOnClickListener {
@@ -83,9 +83,4 @@ class RecipeFragment : Fragment() {
         }
         return binding.root
     }
-
-    fun pxFromDp(context: Context, dp: Int): Int {
-        return (dp * context.resources.displayMetrics.density).toInt()
-    }
-
 }

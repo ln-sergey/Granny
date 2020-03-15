@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewOutlineProvider
+import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -31,10 +33,17 @@ class FeedFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        binding.recyclerView.layoutManager = LinearLayoutManager(context!!)
-        binding.recyclerView.setHasFixedSize(true)
         binding.recyclerView.adapter =
-            FeedRecyclerAdapter(activity!!.findViewById<View>(R.id.mainLayout), context!!, listOf(FeedItem(), FeedItem(), FeedItem(), FeedItem(), FeedItem()))
+            FeedRecyclerAdapter(activity!!.findViewById<View>(R.id.mainLayout), context!!,
+                listOf(
+                    FeedItem("svsdbsbsvbvbvbvbsdlbvbvsdlkbvksdbvsdbvsbvsldvbslbv\ngsegsbsbsebsebse\nevsevsegwegwgewgeg"),
+                    FeedItem("segegegeg"),
+                    FeedItem("fwfwfwfwgwgvgg\nwwwww"),
+                    FeedItem("egeevvvvff\ndd"),
+                    FeedItem("egegegvvvv\nefegwberlhvew\nlsvnlele\nlwenlivel\nfwfw wffwwfw\nwgwgwgw"),
+                    FeedItem("febvejkbek,,"),
+                    FeedItem("flkwflwl\nlknflw"),
+                    FeedItem("|bfemkeks")))
     }
 
 }

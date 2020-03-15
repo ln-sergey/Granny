@@ -1,4 +1,4 @@
-package com.fortnightfellows.granny.utils
+package com.fortnightfellows.granny.animations
 
 import android.view.animation.Interpolator
 import kotlin.math.cos

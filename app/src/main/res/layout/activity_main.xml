@@ -16,27 +16,6 @@
         android:background="@color/colorPrimary"
         tools:context=".ui.activities.MainActivity">
 
-        <FrameLayout
-            android:id="@+id/frameLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:elevation="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottomNavigation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/light"
-                app:itemIconSize="36dp"
-                app:itemIconTint="@color/bottom_navigation"
-                app:labelVisibilityMode="unlabeled"
-                app:menu="@menu/bottom_navigation" />
-        </FrameLayout>
-
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/container"
             android:layout_width="match_parent"
@@ -50,18 +29,23 @@
             android:id="@+id/blurBack"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:outlineProvider="bounds"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/window"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
                 android:layout_gravity="center"
-                android:background="@drawable/back_light"
-                android:orientation="vertical"
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
+                android:background="@drawable/back_light"
+                android:orientation="vertical"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -86,12 +70,12 @@
                             android:id="@+id/image"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginTop="-12dp"
                             android:layout_marginStart="-12dp"
+                            android:layout_marginTop="-12dp"
                             android:layout_marginEnd="-12dp"
                             android:layout_marginBottom="-12dp"
-                            android:scaleType="centerCrop"
                             android:adjustViewBounds="true"
+                            android:scaleType="centerCrop"
                             android:src="@drawable/cat" />
 
                         <TextView
@@ -137,10 +121,10 @@
 
                     <ImageButton
                         android:id="@+id/popupLike"
-                        android:tag="popupLike"
                         android:layout_width="52dp"
                         android:layout_height="41dp"
                         android:background="@drawable/ic_heart_default"
+                        android:tag="popupLike"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.81"
@@ -149,7 +133,6 @@
 
                     <TextView
                         android:id="@+id/popupStart"
-                        android:tag="popupStart"
                         style="@style/text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -160,6 +143,7 @@
                         android:paddingTop="8dp"
                         android:paddingEnd="32dp"
                         android:paddingBottom="8dp"
+                        android:tag="popupStart"
                         android:text="готовить!"
                         android:textAllCaps="true"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -186,6 +170,26 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </FrameLayout>
 
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:outlineProvider="bounds"
+            android:elevation="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light"
+                app:itemIconSize="36dp"
+                app:itemIconTint="@color/bottom_navigation"
+                app:labelVisibilityMode="unlabeled"
+                app:menu="@menu/bottom_navigation" />
+        </FrameLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

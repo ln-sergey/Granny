@@ -84,7 +84,6 @@ class HintedImageButtonTemp : ImageButton {
         val background: BitmapDrawable =
             ImagePreviewerUtils.getBlurredScreenDrawable(context, screen)
 
-        dialog = Dialog(context!!, R.style.ImagePreviewerTheme)
         dialog?.setContentView(R.layout.recipe_preview_dialog)
         dialog?.show()
         dialog?.window?.setBackgroundDrawable(background)

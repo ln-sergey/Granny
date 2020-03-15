@@ -14,17 +14,4 @@
         <item name="android:textColor">@color/text</item>
     </style>
 
-    <style name="ImagePreviewerTheme" parent="android:style/Theme.Translucent">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:backgroundDimEnabled">true</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowAnimationStyle">@style/PauseDialogAnimation</item>
-    </style>
-
-    <style name="PauseDialogAnimation">
-        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
-        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
-    </style>
-
 </resources>
